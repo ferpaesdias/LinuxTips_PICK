@@ -11,13 +11,10 @@ Os contêineres são:
 - **Independentes**: Cada contêiner é gerenciado de forma independente. A exclusão de um contêiner não afetará nenhum outro.
 
 - **Portáteis**: Os contêineres podem funcionar em qualquer lugar! O contêiner executado em sua máquina de desenvolvimento funcionará da mesma maneira em um data center ou em qualquer lugar da nuvem!
-    
-Fonte: 
-
 
 <br>
 
-# Namespaces e Cgroups
+# Namespaces e Cgroups[^2][^3]
 
 Os **namespaces** do Linux fornecem isolamento para processos em execução, limitando seu acesso aos recursos do sistema sem que o processo em execução esteja ciente das limitações.
 
@@ -25,11 +22,9 @@ Um **grupo de controle (cgroup)** é um recurso do kernel Linux que limita, cont
 
 ![Image sobre container, recursos isolados e features dos kernel](Namespace_Cgroup.png)
 
-Fonte: [Isolate containers with a user namespace](https://docs.docker.com/engine/security/userns-remap/)   
-Fonte: [What Are Namespaces and cgroups, and How Do They Work?](https://blog.nginx.org/blog/what-are-namespaces-cgroups-how-do-they-work)
-
-
 <br>
 
 ## Fontes
 [^1]: [What is a container?](https://docs.docker.com/get-started/docker-concepts/the-basics/what-is-a-container/)
+[^2]: [Isolate containers with a user namespace](https://docs.docker.com/engine/security/userns-remap/)   
+[^3]: [What Are Namespaces and cgroups, and How Do They Work?](https://blog.nginx.org/blog/what-are-namespaces-cgroups-how-do-they-work)
