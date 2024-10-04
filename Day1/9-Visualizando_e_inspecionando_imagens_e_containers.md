@@ -34,5 +34,5 @@ docker container inspect <nome ou id do container>
 Mostra detalhes de uma imagem
 
 ```shell
-docker image inspect <id da image>
+docker image inspect <id da imagem>
 ```
