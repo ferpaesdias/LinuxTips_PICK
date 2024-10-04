@@ -7,7 +7,7 @@ O nome do arquivo tem ser `Dockerfile`:
 FROM ubuntu:22.04
 
 # Executa um comando na durante a criação da imagem
-RUN apt update && apt install -y nginx
+RUN apt update && apt install -y nginx && rm -rf /var/lib/apt/list/*
 
 # Mostra a porta que será exposta
 EXPOSE 80
