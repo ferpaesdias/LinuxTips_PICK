@@ -1,4 +1,4 @@
-# Visualização de métricas e reursos pelo container
+# Visualização de métricas e recursos pelo container
 
 <br>
 
