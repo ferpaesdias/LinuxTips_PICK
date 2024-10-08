@@ -57,5 +57,5 @@ cosign verify --key cosign.pub nome_usuario_docker_hub/nome_da_images:tag
 
 <br>
 
-> [!IMPORTANTE]
+> [!IMPORTANT]
 > A chave privada não deve ser compartilhada com terceiros em hipótese alguma.
