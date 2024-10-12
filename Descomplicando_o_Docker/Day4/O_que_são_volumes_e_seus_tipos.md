@@ -12,5 +12,9 @@ Existem 03 tipos de volume:
 
 <br>
 
+![Diagrama dos volumes](types-of-mounts-tmpfs.webp)
+
+<br>
+
 ## Fontes
 [^1]: [tmpfs mounts](https://docs.docker.com/engine/storage/tmpfs/)
