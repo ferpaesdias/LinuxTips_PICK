@@ -52,28 +52,27 @@ Se você usar `--mount` para montar um arquivo ou diretório que ainda não exis
 
 ## Iniciando um contêiner com volume do tipo bind
 
+<br>
 
+Usando a flag `--mount`:
 
-{{< tabs >}}
-{{< tab name="`--mount`" >}}
-
-```console
+```shell
 $ docker run -d -it --name teste-volume \
   --mount type=bind,source="$(pwd)"/app,target=/app \
   debian:11
 ```
 
-{{< /tab >}}
-{{< tab name="`-v`" >}}
+<br>
 
-```console
+Usando a flag `-v` ou `--volume`:
+
+```shell
 $ docker run -d -it --name teste-volume \
   -v "$(pwd)"/app:/app \
   debian:11
 ```
 
-{{< /tab >}}
-{{< /tabs >}}
+<br>
 
 ## Fontes
 [^1]: [Bind mounts](https://docs.docker.com/engine/storage/bind-mounts/)
