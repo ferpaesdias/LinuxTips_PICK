@@ -31,7 +31,7 @@ Em geral, a flag `--mount` é mais explícita e detalhada. A maior diferença é
     - `type`: Pode ser `bind`, `volume` ou `tmpfs`. 
     - `source`: Para volumes **bind**, este é o caminho para o arquivo ou diretório no host. Pode ser especificado como `source` ou `src`.
     - `destination`: O caminho onde o arquivo ou diretório está montado no container. Pode ser especificado como `destination`, `dst` ou `target`.
-    - A opção `readonly`, se presente, faz com que um volume `bind` seja [**montada no contêiner como somente leitura**](https://docs.docker.com/engine/storage/bind-mounts/#use-a-read-only-bind-mount).
+    - A opção `readonly`, se presente, faz com que um volume `bind` seja [**montada no contêiner como somente leitura**](https://docs.docker.com/engine/storage/bind-mounts/#use-a-read-only-bind-mount). Pode ser especificado como `ro`.
     - A opção `bind-propagation`, se presente, altera a opção **[bind-propagation](https://docs.docker.com/engine/storage/bind-mounts/#configure-bind-propagation)**. Pode ser `rprivado`, `private`, `rshared`, `shared`, `rslave`, `slave`.
     - A flag `--mount` não suporta opções `z` ou `Z` para modificar labels **SELinux**.
 
@@ -58,17 +58,17 @@ Usando a flag `--mount`:
 
 ```shell
 $ docker run -d -it --name teste-volume \
-  --mount type=bind,source="$(pwd)"/app,target=/app \
+  --mount type=bind,source="$(pwd)"/app,target=/app,ro \
   debian:11
 ```
-
+ 
 <br>
 
 Usando a flag `-v` ou `--volume`:
 
 ```shell
 $ docker run -d -it --name teste-volume \
-  -v "$(pwd)"/app:/app \
+  -v "$(pwd)"/app:/app,ro \
   debian:11
 ```
 
