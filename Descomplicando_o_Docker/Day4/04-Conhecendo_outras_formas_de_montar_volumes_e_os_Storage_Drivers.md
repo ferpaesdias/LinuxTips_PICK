@@ -30,6 +30,8 @@ Use volumes Docker para dados com uso intensivo de gravação, dados que devem p
 
 ## Selecionar um Storage Driver[^2]
 
+<br>
+
 O Docker Engine fornece os seguintes Storage Drivers no Linux:
 
 |Driver|Descrição|
