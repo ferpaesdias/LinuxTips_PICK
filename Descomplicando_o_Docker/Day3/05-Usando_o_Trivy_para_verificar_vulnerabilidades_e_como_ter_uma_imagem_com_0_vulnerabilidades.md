@@ -15,6 +15,7 @@ O scanner do Trivy inclui:
 - Informações confidenciais e segredos
 - Licenças de software
 
+<br>
 
 ## Instalação do Trivy
 
@@ -29,8 +30,7 @@ sudo apt-get update
 sudo apt-get install trivy
 
 ```
-ou 
-[Instalação do Trivy](https://aquasecurity.github.io/trivy/v0.56/getting-started/installation/)
+ou siga a documentação oficial: [Instalação do Trivy](https://aquasecurity.github.io/trivy/v0.56/getting-started/installation/)
 
 
 <br>
@@ -63,6 +63,15 @@ Copie o caminho do `DOCKER ENDPOINT` do contexto utilizado e o use junto com o c
 ```shell
 trivy image --docker-host unix:///run/user/1000/docker.sock <nome_da_imagem:tag>
 ```
+
+Ou,
+
+Também pode indicar o caminho do `DOCKER ENDPOINT` através da variárvel de ambiente `DOCKER_HOST`
+
+```shell
+export DOCKER_HOST='unix:///run/user/1000/docker.sock'
+```
+**Obs.**: Note que está usando aspas simples.
 
 
 <br>
