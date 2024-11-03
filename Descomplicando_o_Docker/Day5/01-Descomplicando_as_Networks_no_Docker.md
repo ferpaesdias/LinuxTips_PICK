@@ -21,7 +21,7 @@ Para mais informações consulte: [Network drivers](https://docs.docker.com/engi
 
 <br>
 
-### Criar uma rede
+### Criar uma network
 
 <br>
 
@@ -32,7 +32,7 @@ Para criar uma network do tipo `driver` não é necessário utilizar a flag `--d
 
 <br>
 
-### Listar redes
+### Listar networks
 
 <br>
 
@@ -41,10 +41,28 @@ docker network ls
 ```
 <br>
 
-### Inspecionar uma rede
+### Inspecionar uma network
 
 <br>
 
 ```shell
 docker network inspect <nome_network>
+```
+<br>
+
+### Removendo uma network
+
+<br>
+
+```shell
+docker network rm <nome_network>
+```
+
+
+### Removendo todas as networks que não estão em uso
+
+<br>
+
+```shell
+docker network prune
 ```
