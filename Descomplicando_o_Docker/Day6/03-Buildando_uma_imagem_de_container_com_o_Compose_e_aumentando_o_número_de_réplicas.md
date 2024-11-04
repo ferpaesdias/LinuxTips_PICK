@@ -35,6 +35,7 @@ services:
 networks:
   net_exemplo:
 ```
+<br>
 
 Podemos iniciar o Docker Compose acima com 03 réplicas do serviço **appa**. Para isso, execute o comando abaixo no mesmo diretório que está o arquivo `docker-compose.yaml`:
 
