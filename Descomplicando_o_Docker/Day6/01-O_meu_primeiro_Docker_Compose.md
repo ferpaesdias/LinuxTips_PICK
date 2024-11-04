@@ -17,7 +17,7 @@ services:
   nginx:
     image: nginx:latest
     ports:
-    - "8080:80/tcp"
+      - "8080:80/tcp"
 
 ```
 - `services` : Se refere a componentes isolados da aplicação que definem contêineres e suas configurações, como imagem, volumes e redes.
@@ -41,11 +41,18 @@ docker compose up -d
 
 ### Desativando os containers do Docker Compose
 
-No mesmo diretório que está o arquivo `docker-compose.yaml`, execute o comando abaixo para *parar* e *remover* os **containers**, **networks**, **volumes** e **imagens** que foram criados pelos comando `docker compose up`.
+No mesmo diretório que está o arquivo `docker-compose.yaml`, execute o comando abaixo para *parar* e *remover* os **containers** criados pelos comando `docker compose up`.
 
 ```shell
 docker compose down
 ```
+Por padrão, somente os seguintes itens são removidos:
+- **Containers** para os **serviços** definidos no arquivo do Docker Compose.
+- Networks definidas na seção `networks` do arquivo Docker Compose.
+- A Network padrão, se for usada.
+
+**Networks** e **Volumes** definidos como externos nunca são removidos.
+
 <br>
 
 ### Listando os containers do Docker Compose
