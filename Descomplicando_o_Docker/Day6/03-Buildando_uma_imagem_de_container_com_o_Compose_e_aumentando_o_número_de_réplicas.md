@@ -26,7 +26,6 @@ services:
     networks:
       - net_exemplo
 
-services:
   appb:
     image: appb:0.1
     networks:
