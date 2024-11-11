@@ -20,4 +20,4 @@ volumes:
 
 ```
 - Na seção `volumes`, o atributo `name` é opcional.
-- Na seção `volumes`, o atributo `external` configurado como `true` especifica que esse volume já existe na plataforma e seu ciclo de vida é gerenciado fora do aplicativo. O Docker Compose não cria o volume e retorna um erro se o volume não existir. A sua configuração padrão é `false`.
+- Na seção `volumes`, o atributo `external` configurado como `true` especifica que esse volume já existe na plataforma e seu ciclo de vida é gerenciado fora do aplicativo, portanto, o Docker Compose não cria o volume e retorna um erro se o volume não existir. A sua configuração padrão é `false`.
