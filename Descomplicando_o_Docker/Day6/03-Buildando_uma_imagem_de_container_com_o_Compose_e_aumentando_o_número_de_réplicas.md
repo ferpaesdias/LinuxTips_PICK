@@ -6,7 +6,7 @@
 
 ```docker
 services:
-  nome_service:
+  name_service:
     build: ./caminho_Dockerfile
 
 ```
