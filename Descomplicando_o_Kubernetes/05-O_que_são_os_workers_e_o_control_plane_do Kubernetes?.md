@@ -9,7 +9,7 @@ O **Control Plane** gerencia os Nodes Worker e os Pods em um Cluster. Em um ambi
 
 <br>
 
-![Arquitetura Kubernetes ](./kubernetes-cluster-architecture.svg)
+![Arquitetura Kubernetes ](./Imagens/kubernetes-cluster-architecture.svg)
 
 <br>
 
