@@ -17,11 +17,7 @@ O diagrama da Figura acima apresenta um exemplo de arquitetura de referência pa
 
 No diagrama, cada **Node** executa o componente **kube-proxy**. Você precisa de um componente **kube-proxy** em cada **Node** para garantir que a Service API e os comportamentos associados estejam disponíveis na rede do cluster. No entanto, alguns plug-ins de rede fornecem sua própria implementação de proxy de terceiros. Quando você usa esse tipo de plugin de rede, o nó não precisa executar o **kube-proxy**.
 
-
-
+<br>
 
 ## Fontes
 [^1]: [Kubernetes: Cluster Architecture](https://kubernetes.io/docs/concepts/architecture/)
-
-
-https://kubernetes.io/docs/concepts/architecture/
