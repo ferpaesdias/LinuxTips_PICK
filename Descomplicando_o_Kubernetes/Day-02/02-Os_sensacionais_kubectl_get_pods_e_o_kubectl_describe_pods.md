@@ -40,6 +40,14 @@ kubectl get pods -n kube-system
 
 <br>
 
+Listar Pods do **namespace** `kube-system` e com mais informações usando o parâmetro `-o wide`
+
+```shell
+kubectl get pods -n kube-system -o wide
+```
+
+<br>
+
 Gerar uma saída YAML do Pod `pod-exemplo`
 
 ```shell
