@@ -25,7 +25,7 @@ kubectl run -ti pod-exemplo --image nginx --port 80
 Anexe a um processo que já está em execução dentro de um container existente.
 
 ```shell
-kubectl attach pod-exemplo -c nome-container -ti
+kubectl attach pod-exemplo -c nome_container -ti
 ```
 
 <br>
