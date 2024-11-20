@@ -66,8 +66,13 @@ metadata:
 spec:
   containers:
   - image: nginx
-    name: pod-exemplo
+    name: nginx
     resources: {}
+  - image: busybox
+    name: busybox
+    args:
+    - sleep
+    - "600"
   dnsPolicy: ClusterFirst
   restartPolicy: Always
 ```
