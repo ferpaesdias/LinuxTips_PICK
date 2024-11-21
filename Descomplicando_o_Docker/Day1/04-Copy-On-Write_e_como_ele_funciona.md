@@ -1,4 +1,4 @@
-# A estratégia copy-on-write (CoW)[^1]
+# A estratégia copy-on-write (CoW)
 
 <br>
 
@@ -6,5 +6,5 @@
 
 <br>
 
-## Fonte
-[^1]: [The copy-on-write (CoW) strategy](https://docs.docker.com/engine/storage/drivers/#the-copy-on-write-cow-strategy)
+## Saiba mais
+[The copy-on-write (CoW) strategy](https://docs.docker.com/engine/storage/drivers/#the-copy-on-write-cow-strategy)

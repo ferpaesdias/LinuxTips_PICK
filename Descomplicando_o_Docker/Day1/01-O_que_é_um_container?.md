@@ -1,4 +1,4 @@
-# O que é um container?[^1]
+# O que é um container?
 
 Os contêineres são processos isolados para cada um dos componentes do seu aplicativo. Cada componente é executado em seu próprio ambiente isolado, completamente isolado de todo o resto em sua máquina.
 
@@ -14,7 +14,7 @@ Os contêineres são:
 
 <br>
 
-# Namespaces e Cgroups[^2][^3]
+# Namespaces e Cgroups
 
 Os **namespaces** do Linux fornecem isolamento para processos em execução, limitando seu acesso aos recursos do sistema sem que o processo em execução esteja ciente das limitações.
 
@@ -24,7 +24,7 @@ Um **grupo de controle (cgroup)** é um recurso do kernel Linux que limita, cont
 
 <br>
 
-## Fontes
-[^1]: [What is a container?](https://docs.docker.com/get-started/docker-concepts/the-basics/what-is-a-container/)
-[^2]: [Isolate containers with a user namespace](https://docs.docker.com/engine/security/userns-remap/)   
-[^3]: [What Are Namespaces and cgroups, and How Do They Work?](https://blog.nginx.org/blog/what-are-namespaces-cgroups-how-do-they-work)
+## Saiba mais
+[What is a container?](https://docs.docker.com/get-started/docker-concepts/the-basics/what-is-a-container/)   
+[Isolate containers with a user namespace](https://docs.docker.com/engine/security/userns-remap/)   
+[What Are Namespaces and cgroups, and How Do They Work?](https://blog.nginx.org/blog/what-are-namespaces-cgroups-how-do-they-work)   
