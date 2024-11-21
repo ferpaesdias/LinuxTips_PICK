@@ -1,4 +1,4 @@
-# O que é um deployment?[^1]
+# O que é um deployment?
 
 Um **Deployment** gerencia um conjunto de Pods para executar um workload, normalmente um que não mantém o estado (stateless).
 
@@ -33,5 +33,5 @@ O Casos de Uso típicos para **Deployments**:
 
 <br>
 
-## Fontes
-[^1]: [Kubernetes: Deployments](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#creating-a-deployment)
+## Saiba mais
+[Kubernetes: Pods](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#creating-a-deployment)
