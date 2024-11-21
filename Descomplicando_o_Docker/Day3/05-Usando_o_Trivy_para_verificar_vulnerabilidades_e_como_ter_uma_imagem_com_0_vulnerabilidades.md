@@ -9,11 +9,17 @@
 O [Trivy](https://trivy.dev/) é um scanner de segurança abrangente e versátil. Ele possui scanners que procuram problemas de segurança e aponta onde pode encontrar esses problemas.
 
 O scanner do Trivy inclui:
-- Pacotes de sistema operacional e dependências de software em uso (SBOM)[^1]
-- Vulnerabilidades conhecidas (CVEs)[^2]
+- Pacotes de sistema operacional e dependências de software em uso (SBOM)
+- Vulnerabilidades conhecidas (CVEs)
 - Problemas e configurações incorretas de IaC
 - Informações confidenciais e segredos
 - Licenças de software
+
+<br>
+
+>[!Note]
+**SBOM** (Software Bill of Materials) é uma lista abrangente de todos os componentes de software, dependências e metadados associados a um aplicativo.   
+**CVE** (sigla inglesa para vulnerabilidades e exposições comuns) é uma lista pública de falhas de segurança. 
 
 <br>
 
@@ -73,12 +79,8 @@ export DOCKER_HOST='unix:///run/user/1000/docker.sock'
 ```
 **Obs.**: Note que está usando aspas simples.
 
-
-<br>
-<br>
 <br>
 
-
-## Fonte
-[^1]: [What is a Software Bill of Materials (SBOM)?](https://www.crowdstrike.com/cybersecurity-101/secops/software-bill-of-materials-sbom/)  Um SBOM (Software Bill of Materials) é uma lista abrangente de todos os componentes de software, dependências e metadados associados a um aplicativo.    
-[^2]: [O que é CVE?](https://www.redhat.com/pt-br/topics/security/what-is-cve)  O CVE, sigla inglesa para vulnerabilidades e exposições comuns, é uma lista pública de falhas de segurança. 
+## Saiba mais
+[What is a Software Bill of Materials (SBOM)?](https://www.crowdstrike.com/cybersecurity-101/secops/software-bill-of-materials-sbom/)      
+[O que é CVE?](https://www.redhat.com/pt-br/topics/security/what-is-cve)   

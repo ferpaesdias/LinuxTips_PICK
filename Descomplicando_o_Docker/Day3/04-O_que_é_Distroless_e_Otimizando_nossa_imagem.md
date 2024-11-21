@@ -1,4 +1,4 @@
-# O que é Distroless e otimizando nossa imagem [^1]
+# O que é Distroless e otimizando nossa imagem 
 
 <br>
 
@@ -39,7 +39,8 @@ ENTRYPOINT ["python", "-m", "flask", "run", "--host=0.0.0.0"]
 
 Obs.: Arquivo somente para consulta, não possui as dependências necessárias.
 
+<br>
 
 ---
-## Fonte
-[^1]:["Distroless" Container Images](https://github.com/GoogleContainerTools/distroless)
+## Saiba mais
+["Distroless" Container Images](https://github.com/GoogleContainerTools/distroless)
