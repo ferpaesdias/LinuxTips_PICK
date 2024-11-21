@@ -18,7 +18,7 @@ docker container run -d --name container-teste -v volume-teste:/usr/share/nginx/
 
 <br>
 
-## Storage Drivers[^1]
+## Storage Drivers
 
 O Docker usa **Storage Drivers** para armazenar camadas de imagem e dados na camada gravável de um container. A camada gravável de um container não persiste após a exclusão do container, mas é adequada para armazenar dados efêmeros gerados em tempo de execução.
 
@@ -28,7 +28,7 @@ Use volumes Docker para dados com uso intensivo de gravação, dados que devem p
 
 <br>
 
-## Selecionar um Storage Driver[^2]
+## Selecionar um Storage Driver
 
 <br>
 
@@ -45,7 +45,7 @@ O Docker Engine fornece os seguintes Storage Drivers no Linux:
 <br>
 
 ## Fontes
-[^1]: [Storage drivers](https://docs.docker.com/engine/storage/drivers/)   
-[^2]: [Select a storage driver](https://docs.docker.com/engine/storage/drivers/select-storage-driver/)
+[Docker: Storage drivers](https://docs.docker.com/engine/storage/drivers/)   
+[Docker: Select a storage driver](https://docs.docker.com/engine/storage/drivers/select-storage-driver/)
 
 

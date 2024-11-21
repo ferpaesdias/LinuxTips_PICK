@@ -43,5 +43,3 @@ Mostra os logs de um container.
 docker container logs -f <id ou nome do container>
 ```
 - `-f`: Mostra as últimas alterações conforme forem acontecendo.
-
-<br>

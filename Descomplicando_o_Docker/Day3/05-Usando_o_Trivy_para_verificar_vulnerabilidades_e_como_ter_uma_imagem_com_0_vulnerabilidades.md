@@ -82,5 +82,5 @@ export DOCKER_HOST='unix:///run/user/1000/docker.sock'
 <br>
 
 ## Saiba mais
-[What is a Software Bill of Materials (SBOM)?](https://www.crowdstrike.com/cybersecurity-101/secops/software-bill-of-materials-sbom/)      
-[O que é CVE?](https://www.redhat.com/pt-br/topics/security/what-is-cve)   
+[CrowdStrike: What is a Software Bill of Materials (SBOM)?](https://www.crowdstrike.com/cybersecurity-101/secops/software-bill-of-materials-sbom/)      
+[Red Hat: O que é CVE?](https://www.redhat.com/pt-br/topics/security/what-is-cve)   

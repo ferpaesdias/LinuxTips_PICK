@@ -1,4 +1,4 @@
-# Criando um volume do tipo bind[^1]
+# Criando um volume do tipo bind
 
 Os volumes do tipo **bind** existem desde os primeiros dias do Docker. Os volumes **bind** têm funcionalidades limitadas em comparação com os volumes do tipo **volume**. Quando você usa um volume **bind**, um arquivo ou diretório na máquina host é montado em um container. O arquivo ou diretório é referenciado por seu caminho absoluto na máquina host.
 
@@ -74,6 +74,5 @@ $ docker run -d -it --name teste-volume \
 
 <br>
 
-## Fontes
-[^1]: [Bind mounts](https://docs.docker.com/engine/storage/bind-mounts/)
-
+## Saiba mais
+[Docker: Bind mounts](https://docs.docker.com/engine/storage/bind-mounts/)   
