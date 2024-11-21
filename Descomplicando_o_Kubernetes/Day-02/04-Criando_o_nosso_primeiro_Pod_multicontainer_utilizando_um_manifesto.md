@@ -1,4 +1,4 @@
-# Criando o nosso primeiro Pod multi-container utilizando um manifesto[^1]
+# Criando o nosso primeiro Pod multi-container utilizando um manifesto
 
 Ao criar um objeto no Kubernetes, você deve fornecer a especificação do objeto que descreve seu estado desejado, bem como algumas informações básicas sobre o objeto (como um nome).
 
@@ -89,7 +89,7 @@ O `kubectl apply` irá criar os recursos descritos no manifesto, porém, se algu
 
 <br>
 
-### kubectl create[^2]
+### kubectl create
 
 O `kubectl create` cria um recurso a partir de um arquivo ou stdin.
 
@@ -111,7 +111,7 @@ cat pod-exemplo.yaml | kubectl create -f -
 
 <br>
 
-### kubectl apply[^3]
+### kubectl apply
 
 O `kubectl apply` aplica a configuração de um recurso a partir de um arquivo ou stdin. Este recurso será criado se não existir.
 
@@ -133,7 +133,7 @@ cat pod-exemplo.yaml | kubectl apply -f -
 
 <br>
 
-## Verificar logs dos Pods[^4]
+## Verificar logs dos Pods
 
 Mostra os logs de um container em um Pod ou recurso especificado. Se o Pod tiver apenas um container, o nome do container será opcional.
 
@@ -143,8 +143,8 @@ kubectl logs -f -c nome_container pod-exemplo
 
 <br>
 
-## Fontes
-[^1]: [Kubernetes: Describing a Kubernetes object](https://kubernetes.io/docs/concepts/overview/working-with-objects/#describing-a-kubernetes-object)
-[^2]: [Kubernetes: kubectl-commands create](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#create)
-[^3]: [Kubernetes: kubectl-commands apply](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#apply)
-[^4]: [Kubernetes: kubectl-commands logs](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#logs)
+## Saiba mais
+[Kubernetes: Describing a Kubernetes object](https://kubernetes.io/docs/concepts/overview/working-with-objects/#describing-a-kubernetes-object)   
+[Kubernetes: kubectl-commands create](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#create)   
+[Kubernetes: kubectl-commands apply](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#apply)   
+[Kubernetes: kubectl-commands logs](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#logs)   

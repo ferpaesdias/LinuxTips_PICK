@@ -2,7 +2,7 @@
 
 <br>
 
-## kubectl get[^1]
+## kubectl get
 
 O `kubectl get` mostra uma tabela com as informações mais importantes sobre os recursos especificados.
 
@@ -56,7 +56,7 @@ kubectl get pods pod-exemplo -o yaml
 
 <br>
 
-## kubectl describe[^2]
+## kubectl describe
 
 O `kubectl describe` mostra uma descrição detalhada dos recursos selecionados, incluindo recursos relacionados, como eventos ou controladores.
 
@@ -72,6 +72,6 @@ kubectl describe pods pod-exemplo
 
 <br>
 
-## Fontes
-[^1]: [Kubernetes: kubectl-commands get](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#get)
-[^2]: [Kubernetes: kubectl-commands describe](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#describe)
+## Saiba mais
+[Kubernetes: kubectl-commands get](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#get)    
+[Kubernetes: kubectl-commands describe](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#describe)

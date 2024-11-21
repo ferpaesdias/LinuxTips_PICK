@@ -1,4 +1,4 @@
-# Limitando o consumo de recursos de CPU e Memória[^1]
+# Limitando o consumo de recursos de CPU e Memória
 
 <br>
 
@@ -73,5 +73,5 @@ spec:
 
 <br>
 
-## Fontes
-[^1]: [Kubernetes: Resource Management for Pods and Containers](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/)
+## Saiba mais
+[Kubernetes: Resource Management for Pods and Containers](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/)

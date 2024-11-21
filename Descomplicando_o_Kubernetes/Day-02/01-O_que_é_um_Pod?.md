@@ -1,4 +1,4 @@
-# O que é um Pod?[^1] 
+# O que é um Pod?
 
 **Pods** são as menores unidades de computação ​​que você pode criar e gerenciar no Kubernetes.
 
@@ -16,5 +16,5 @@ Agrupar vários containers co-localizados e co-gerenciados em um único **Pod** 
 
 <br>
 
-## Fontes
-[^1]: [Kubernetes: Pods](https://kubernetes.io/docs/concepts/workloads/pods/)
+## Saiba mais
+[Kubernetes: Pods](https://kubernetes.io/docs/concepts/workloads/pods/)

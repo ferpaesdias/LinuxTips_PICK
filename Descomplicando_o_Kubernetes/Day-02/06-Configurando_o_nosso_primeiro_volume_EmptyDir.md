@@ -1,4 +1,4 @@
-# Configurando o nosso primeiro volume EmptyDir[^1]
+# Configurando o nosso primeiro volume EmptyDir
 
 Como o nome diz, o volume **emptyDir** está inicialmente vazio. Todos os containers no Pod podem ler e gravar os mesmos arquivos no volume **emptyDir**, embora esse volume possa ser montado no mesmo caminho ou em caminhos diferentes em cada container.
 
@@ -47,5 +47,5 @@ spec:
 
 <br>
 
-## Fontes
-[^1]: [Kubernetes: Volumes emptyDir](https://kubernetes.io/docs/concepts/storage/volumes/#emptydir)
+## Saiba mais
+[Kubernetes: Volumes emptyDir](https://kubernetes.io/docs/concepts/storage/volumes/#emptydir)
