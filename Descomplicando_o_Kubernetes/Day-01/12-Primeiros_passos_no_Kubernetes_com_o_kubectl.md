@@ -1,4 +1,4 @@
-# Primeiros passos no Kubernetes com o kubectl[^1]
+# Primeiros passos no Kubernetes com o kubectl
 
 Kubernetes fornece uma ferramenta de linha de comando para comunicação com o **Control Plane** de um cluster Kubernetes, usando a API Kubernetes.
 
@@ -84,5 +84,5 @@ kubectl delete pod pod-exemplo
 
 <br>
 
-## Fontes
-[^1]: [Kubernetes: Command line tool (kubectl)](https://kubernetes.io/docs/reference/kubectl/)
+## Saiba mais
+[Kubernetes: Command line tool (kubectl)](https://kubernetes.io/docs/reference/kubectl/)

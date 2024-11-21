@@ -1,4 +1,4 @@
-# O que é a OCI?[^1]
+# O que é a OCI?
 
 A **Open Container Initiative** é uma estrutura de governança aberta com o propósito expresso de criar padrões abertos da indústria em torno de formatos e tempos de execução de contêineres.
 
@@ -13,5 +13,5 @@ A **Runtime Specification** descreve como executar um “pacote de sistema de ar
 
 <br>
 
-## Fontes
-[^1]: [OCI: About the Open Container Initiative](https://opencontainers.org/about/overview/)
+## Saiba mais
+[OCI: About the Open Container Initiative](https://opencontainers.org/about/overview/)

@@ -1,4 +1,4 @@
-# O que são os workers e o control plane do Kubernetes?[^1]
+# O que são os workers e o control plane do Kubernetes?
 
 
 Um cluster **Kubernetes** consiste em um **Control Plane** mais um conjunto de **Workers**, chamados **Nodes** (nós), que executam aplicativos em containers. Cada cluster precisa de pelo menos um node de Worker para executar **Pods**.
@@ -19,5 +19,5 @@ No diagrama, cada **Node** executa o componente **kube-proxy**. Você precisa de
 
 <br>
 
-## Fontes
-[^1]: [Kubernetes: Cluster Architecture](https://kubernetes.io/docs/concepts/architecture/)
+## Saiba mais
+[Kubernetes: Cluster Architecture](https://kubernetes.io/docs/concepts/architecture/)

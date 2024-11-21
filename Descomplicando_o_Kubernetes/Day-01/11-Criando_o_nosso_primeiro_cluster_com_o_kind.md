@@ -2,7 +2,7 @@
 
 <br>
 
-## Instalação do kind no Linux[^1]
+## Instalação do kind no Linux
 
 Instalação do `kind' no Linux (x86-64):
 
@@ -77,5 +77,5 @@ kind delete cluster
 
 <br>
 
-## Fontes
-[^1]: [Kind: Quick Start](https://kind.sigs.k8s.io/docs/user/quick-start/)
+## Saiba mais
+[Kind: Quick Start](https://kind.sigs.k8s.io/docs/user/quick-start/)

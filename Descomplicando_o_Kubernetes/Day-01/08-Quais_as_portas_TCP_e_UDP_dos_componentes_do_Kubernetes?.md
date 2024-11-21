@@ -1,4 +1,4 @@
-# Quais as portas TCP e UDP dos componentes do Kubernetes?[^1]
+# Quais as portas TCP e UDP dos componentes do Kubernetes?
 
 Quando executamos o Kubernetes em um ambiente com limites de redes rígidos, com datacenters on-premises com firewall de rede ou redes virtuais em nuvens públicas, é útil estar ciente das portas e protocolos usados pelos componentes do Kubernetes.
 
@@ -33,5 +33,5 @@ Todas as portas podem ser substituídas. Quando utilizar portas customizadas, es
 
 <br>
 
-## Fontes
-[^1]: [Kubernetes: Ports and Protocols](https://kubernetes.io/docs/reference/networking/ports-and-protocols/)
+## Saiba mais
+[Kubernetes: Ports and Protocols](https://kubernetes.io/docs/reference/networking/ports-and-protocols/)

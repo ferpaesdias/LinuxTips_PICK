@@ -2,7 +2,7 @@
 
 <br>
 
-## Instalação do kubectl no Linux[^1]
+## Instalação do kubectl no Linux
 
 Instalação do `kubectl` no Linux (x86-64) usando o `curl`:
 
@@ -21,5 +21,5 @@ kubectl version --client
 
 <br>
 
-## Fontes
-[^1]: [Kubernetes: Install and Set Up kubectl on Linux](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
+## Saiba mais
+[Kubernetes: Install and Set Up kubectl on Linux](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)

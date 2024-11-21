@@ -1,4 +1,4 @@
-# Quais os componentes do Worker do Kubernetes?[^1]
+# Quais os componentes do Worker do Kubernetes?
 
 <br>
 
@@ -42,5 +42,5 @@ O **container runtime** é responsável por gerenciar a execução e o ciclo de 
 
 <br>
 
-## Fontes
-[^1]: [Kubernetes: Cluster Architecture](https://kubernetes.io/docs/concepts/architecture/)
+## Saiba mais
+[Kubernetes: Cluster Architecture](https://kubernetes.io/docs/concepts/architecture/)

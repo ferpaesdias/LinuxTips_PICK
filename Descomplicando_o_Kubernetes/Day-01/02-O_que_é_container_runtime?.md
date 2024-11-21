@@ -1,4 +1,4 @@
-# O que é um container runtime?[^1][^2]
+# O que é um container runtime?
 
 O **Container Runtime** é um componente de nível inferior normalmente usado em um *Container Engine*, mas também pode ser usado manualmente para testes.
 
@@ -37,7 +37,7 @@ Para uma compreensão ainda mais profunda, consulte Noções básicas sobre os p
 
 <br>
 
-## Containerd[^3]
+## Containerd
 
 o **containerd** é uma abstração dos recursos de kernel de baixo nível usados ​​para executar e gerenciar containers em um sistema. É uma plataforma usada em software de contêiner como Docker e Kubernetes.
 
@@ -47,8 +47,8 @@ Por padrão, o **containerd** usa *runc* como tempo de *Container Runtime*.
 
 <br>
 
-## Fontes
-[^1]: [Red Hat: A Practical Introduction to Container Terminology](https://developers.redhat.com/blog/2018/02/22/container-terminology-practical-introduction#basic_vocabulary)
-[^2]: [AWS: Container runtime](https://docs.aws.amazon.com/whitepapers/latest/containers-on-aws/key-considerations.html#container-runtime)   
-[^3]: [Docker: Alternative container runtimes](https://docs.docker.com/engine/daemon/alternative-runtimes/)   
+## Saiba mais
+[Red Hat: A Practical Introduction to Container Terminology](https://developers.redhat.com/blog/2018/02/22/container-terminology-practical-introduction#basic_vocabulary)
+[AWS: Container runtime](https://docs.aws.amazon.com/whitepapers/latest/containers-on-aws/key-considerations.html#container-runtime)   
+[Docker: Alternative container runtimes](https://docs.docker.com/engine/daemon/alternative-runtimes/)   
 

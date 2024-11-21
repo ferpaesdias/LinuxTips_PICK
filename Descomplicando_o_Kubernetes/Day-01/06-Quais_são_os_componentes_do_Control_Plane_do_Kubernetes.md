@@ -1,4 +1,4 @@
-# Quais são os componentes do Control Plane do Kubernetes[^1]
+# Quais são os componentes do Control Plane do Kubernetes
 
 <br>
 
@@ -86,5 +86,5 @@ Os seguintes controladores podem ter dependências de provedor de nuvem:
 
 <br>
 
-## Fontes
-[^1]: [Kubernetes: Cluster Architecture](https://kubernetes.io/docs/concepts/architecture/)
+## Saiba mais
+[Kubernetes: Cluster Architecture](https://kubernetes.io/docs/concepts/architecture/)

@@ -1,6 +1,6 @@
 # O que é um container engine?
 
-Um **container engine[^1]** é um software que aceita solicitações do usuário, incluindo opções de linha de comando, extrai imagens e, da perspectiva do usuário final, executa o container.
+Um **container engine** é um software que aceita solicitações do usuário, incluindo opções de linha de comando, extrai imagens e, da perspectiva do usuário final, executa o container.
 
 Existem muitos **container engine**, incluindo *docker*, *RKT*, *CRI-O* e *LXD*. Além disso, muitos provedores de nuvem, plataformas como serviço (PaaS) e plataformas de container têm seus próprios mecanismos de container integrados que consomem imagens de container compatíveis com Docker ou OCI.
 
@@ -23,11 +23,9 @@ Normalmente, o **container engine** é responsável:
     - Usar padrões especificados pela imagem do container (ex. regras SECCOM)
 - Chamar o *Container Runtime*
 
-
-
 <br>
 
-## Docker Engine [^2]
+## Docker Engine
 
 **Docker Engine** é uma tecnologia de conteinerização de código aberto para construir e conteinerizar seus aplicativos.
 
@@ -46,7 +44,7 @@ Para obter mais detalhes, consulte Arquitetura Docker.
 
 <br>
 
-## Fontes
-[^1]: [Red Hat: A Practical Introduction to Container Terminology](https://developers.redhat.com/blog/2018/02/22/container-terminology-practical-introduction#basic_vocabulary)
-[^2]: [Docker: Docker Engine](https://docs.docker.com/engine/)   
+## Saiba mais
+[Red Hat: A Practical Introduction to Container Terminology](https://developers.redhat.com/blog/2018/02/22/container-terminology-practical-introduction#basic_vocabulary)   
+[Docker: Docker Engine](https://docs.docker.com/engine/)   
 

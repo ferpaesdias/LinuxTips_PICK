@@ -1,4 +1,4 @@
-# O que é Kubernetes?[^1]
+# O que é Kubernetes?
 
 **Kubernetes** é uma plataforma portátil, extensível e de código aberto para gerenciamento de cargas de trabalho e serviços em containers, que facilita a configuração declarativa e a automação.
 
@@ -64,5 +64,5 @@ Kubernetes:
 
 <br>
 
-## Fontes
-[^1]: [Kubernetes: Overview](https://kubernetes.io/docs/concepts/overview/)
+## Saiba mais
+[Kubernetes: Overview](https://kubernetes.io/docs/concepts/overview/)

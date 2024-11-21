@@ -2,7 +2,7 @@
 
 <br>
 
-## Pods[^1]
+## Pods
 
 **Pods** são as menores unidades de computação ​​que você pode criar e gerenciar no Kubernetes.
 
@@ -16,7 +16,7 @@ Além de containers de aplicativos, um **Pod** pode conter containers de inicial
 
 <br>
 
-## Deployments[^2]
+## Deployments
 
 Um **Deployment** gerencia um conjunto de Pods para executar um workload de aplicativo, geralmente uma que não mantém o estado.
 
@@ -28,7 +28,7 @@ Você pode definir **Deployments** para criar novos ReplicaSets ou para remover 
 
 <br>
 
-## Replica Set[^3]
+## Replica Set
 
 O objetivo de um **ReplicaSet** é manter um conjunto estável de Pods em execução a qualquer momento. Como tal, é frequentemente utilizado para garantir a disponibilidade de um número específico de Pods idênticos.
 
@@ -36,7 +36,7 @@ Normalmente, você define um *Deployment* e permite que ele gerencie **ReplicaSe
 
 <br>
 
-## Service[^4]
+## Service
 
 No Kubernetes, um **Serviço** é um método para expor um aplicativo de rede que está sendo executado como um ou mais Pods em seu cluster.
 
@@ -48,8 +48,8 @@ Você usa um **Service** para disponibilizar esse conjunto de Pods na rede para 
 
 <br>
 
-## Fontes
-[^1]: [Kubernetes: Pods](https://kubernetes.io/docs/concepts/workloads/pods/)
-[^2]: [Kubernetes: Deployments](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)   
-[^3]: [Kubernetes: ReplicaSet](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/)   
-[^4]: [Kubernetes: Service](https://kubernetes.io/docs/concepts/services-networking/service/)   
+## Saiba mais
+[Kubernetes: Pods](https://kubernetes.io/docs/concepts/workloads/pods/)   
+[Kubernetes: Deployments](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)   
+[Kubernetes: ReplicaSet](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/)   
+[Kubernetes: Service](https://kubernetes.io/docs/concepts/services-networking/service/)   
