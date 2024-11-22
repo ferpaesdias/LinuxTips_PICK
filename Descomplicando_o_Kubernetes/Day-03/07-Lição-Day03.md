@@ -15,6 +15,7 @@ metadata:
     app: licaoDay03
     licao: Day03
 spec:
+  replicas: 10
   selector:
     matchLabels:
       app: licaoDay03
