@@ -20,7 +20,7 @@ spec:
     - name: VAR1
       value: "valor1"
     ports:
-    - containerPort: 80
+    - containerPort: 8080
       name: http
       protocol: TCP
     resources:
@@ -36,7 +36,6 @@ spec:
     - mountPath: /app
       name: debian-app
       readOnly: false
-    args:
     command: ["sleep"]
     args: ["600"]
   restartPolicy: Always
