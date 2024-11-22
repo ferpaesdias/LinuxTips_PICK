@@ -5,6 +5,8 @@
 Criar um manifesto de um Pod com o maior número de campos
 
 ```yaml
+apiVersion: v1
+kind: Pod
 metadata:
   name: nginx
   namespace: licao-day02
@@ -20,7 +22,7 @@ spec:
     - name: VAR1
       value: "valor1"
     ports:
-    - containerPort: 8080
+    - containerPort: 80
       name: http
       protocol: TCP
     resources:
@@ -39,6 +41,11 @@ spec:
     command: ["sleep"]
     args: ["600"]
   restartPolicy: Always
+
+  volumes:
+  - name: debian-app
+    emptyDir:
+      sizeLimit: 256Mi
 ```
 
 Manifesto em constante atualização. 
