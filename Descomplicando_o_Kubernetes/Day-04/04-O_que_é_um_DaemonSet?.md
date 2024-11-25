@@ -18,7 +18,5 @@ Usos típicos de um **DaemonSet**:
 
 <br>
 
-<br>
-
 ## Saiba mais
 [Kubernetes: DaemonSet](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/)
