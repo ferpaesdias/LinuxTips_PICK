@@ -1,0 +1,203 @@
+# Liveness probe
+
+**Liveness probe** determinam quando reiniciar um container. Por exemplo, **liveness probe**  podem detectar um impasse quando um aplicativo está em execução, mas não consegue progredir.
+
+<br>
+
+A **liveness probe** têm vários campos que você pode usar para controlar com mais precisão o comportamento das verificações de inicialização, atividade e prontidão:
+
+- `initialDelaySecond`: Informa ao *kubelet* o tempo em segundos que ele deve esperar antes de executar a primeira investigação. O valor padrão é `0` e o valor mínimo é `0`.
+
+- `periodSeconds`: Informa ao *kubelet* a frequência em segundos que será realizada a verificação. O valor padrão é `10` e o valor mínimo é `1`.
+
+- `timeoutSeconds`: O número de segundos que será considerado como falha após uma verificação falhar.  O valor padrão é `1` e o valor mínimo é `1`.
+
+- `successThreshold`: A quantidade mínima de "success"  consecutivas após uma falha para a verificação ser considerada bem-sucedida.  O valor padrão é `1`. Deve ser `1`para *liveness probe* e *startup probe* e o valor mínimo é `1`.
+
+- `failureThreshold`: A quantidade falhas consecutivas para a verificação ser considerada "failure". O Kubernetes considera que a verificação geral falhou: o container não está ready/healthy/live. O valor padrão é `3` e o valor mínimo é `1`.
+
+- `terminationGracePeriodSeconds`: Define um período de carência, em segundos, para o *kubelet* aguardar entre o acionamento do desligamento do container com falha e, em seguida, forçar o *container runtime* a interrompê-lo. O valor padrão é `30` e o valor mínimo é `1`.
+
+<br>
+
+A **readiness probe** e a **liveness probe** não dependem uma da outra para serem bem-sucedidas. Se quiser esperar antes de executar uma **readiness probe**, você deve usar `InitialDelaySeconds` ou **startup probe**.
+
+A **readiness probe** e a **liveness probe** podem ser usadas em paralelo para o mesmo container. O uso de ambos pode garantir que o tráfego não chegue a um container que não esteja pronto para isso e que os containers sejam reiniciados quando falharem.
+
+<br>
+
+## TCP liveness probe
+
+Com esta configuração, o *kubelet* tentará abrir um soquete para o seu container na porta especificada. Se conseguir estabelecer uma conexão, o container é considerado íntegro; caso contrário, é considerado uma falha.
+
+Exemplo de um manifesto com **TCP liveness probe**
+
+<br>
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx-deployment
+  name: nginx-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx-deployment
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: nginx-deployment
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        resources:
+          limits:
+            cpu: 0.5
+            memory: 256Mi
+          requests:
+            cpu: 0.3
+            memory: 64Mi
+        livenessProbe:
+          tcpSocket:
+            port: 80
+          initialDelaySeconds: 10
+          periodSeconds: 10
+          timeoutSeconds: 5
+          failureThreshold: 3
+        readinessProbe:
+          tcpSocket:
+            port: 80
+          initialDelaySeconds: 10
+          periodSeconds: 10
+          timeoutSeconds: 5
+          failureThreshold: 3
+```
+
+<br>
+
+## liveness HTTP request
+
+O *kubelet* envia uma solicitação HTTP GET para o servidor que está em execução no container e escutando na porta 80 (`port: 80`).
+
+Se caminho, descrito no campo `path:`, do servidor retornar um código de sucesso, o *kubelet* considerará o container ativo e saudável. Se o manipulador retornar um código de falha, o *kubelet* encerra o container e o reinicia.
+
+Exemplo de um manifesto com **liveness HTTP request**
+
+<br>
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx-deployment
+  name: nginx-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx-deployment
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: nginx-deployment
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        resources:
+          limits:
+            cpu: 0.5
+            memory: 256Mi
+          requests:
+            cpu: 0.3
+            memory: 64Mi
+        livenessProbe:
+          httpGet:
+            path: /index.html
+            port: 80
+          initialDelaySeconds: 10
+          periodSeconds: 10
+          timeoutSeconds: 5
+          failureThreshold: 3
+        readinessProbe:
+          httpGet:
+            path: /index.html
+            port: 80
+          initialDelaySeconds: 10
+          periodSeconds: 10
+          timeoutSeconds: 5
+          failureThreshold: 3
+
+```
+
+<br>
+
+## liveness command
+
+Para realizar uma verificação, o *kubelet* executa o comando `cat /usr/share/nginx/html/index.html`, configurado no campo `command`, no container de destino.
+
+Se o comando for bem-sucedido, ele retornará `0` e o *kubelet* considerará o container ativo e íntegro. Se o comando retornar um valor diferente de zero, o *kubelet* encerra o container e o reinicia.
+
+Exemplo de um manifesto com **liveness command**
+
+<br>
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx-deployment
+  name: nginx-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx-deployment
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: nginx-deployment
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        resources:
+          limits:
+            cpu: 0.5
+            memory: 256Mi
+          requests:
+            cpu: 0.3
+            memory: 64Mi
+        livenessProbe:
+          exec:
+            command:
+            - cat
+            - /usr/share/nginx/html/index.html
+          initialDelaySeconds: 10
+          periodSeconds: 10
+          timeoutSeconds: 5
+          failureThreshold: 3
+        readinessProbe:
+          exec:
+            command:
+            - cat
+            - /usr/share/nginx/html/index.html
+          initialDelaySeconds: 10
+          periodSeconds: 10
+          timeoutSeconds: 5
+          failureThreshold: 3
+```
+
+<br>
+
+## Saiba mais
+[Kubernetes: Configure Liveness, Readiness and Startup Probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/)
