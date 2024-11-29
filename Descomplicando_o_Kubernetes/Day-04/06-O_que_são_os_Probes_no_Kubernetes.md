@@ -12,11 +12,11 @@ Kubernetes tem vários tipos de **Probes**:
 
 <br>
 
-**Liveness probe** determinam quando reiniciar um container. Por exemplo, **Liveness probe**  podem detectar um impasse quando um aplicativo está em execução, mas não consegue progredir.
+**liveness probe** determinam quando reiniciar um container. Por exemplo, **liveness probe**  podem detectar um impasse quando um aplicativo está em execução, mas não consegue progredir.
 
 Se um container falhar repetidamente em sua verificação de atividade, o kubelet reinicia o container.
 
-**Liveness probe**  não esperam que as *readiness probes* sejam bem-sucedidas. Se quiser esperar antes de executar uma sondagem de atividade, você pode definir `initialDelaySeconds` ou usar uma *startup probe*.
+**liveness probe**  não esperam que as *readiness probes* sejam bem-sucedidas. Se quiser esperar antes de executar uma sondagem de atividade, você pode definir `initialDelaySeconds` ou usar uma *startup probe*.
 
 <br>
 
@@ -24,11 +24,11 @@ Se um container falhar repetidamente em sua verificação de atividade, o kubele
 
 <br>
 
-As **Readiness probe** determinam quando um container está pronto para começar a aceitar tráfego. Isso é útil quando aguarda que um aplicativo execute tarefas inicias demoradas, como estabelecer conexão de rede, carregar arquivos e aquecer caches.
+As **readiness probe** determinam quando um container está pronto para começar a aceitar tráfego. Isso é útil quando aguarda que um aplicativo execute tarefas inicias demoradas, como estabelecer conexão de rede, carregar arquivos e aquecer caches.
 
 Isso é útil ao aguardar que um aplicativo execute tarefas iniciais demoradas, como estabelecer conexões de rede, carregar arquivos e aquecer caches.
 
-As **Readiness probe** são executadas no container durante todo o seu ciclo de vida.
+As **readiness probe** são executadas no container durante todo o seu ciclo de vida.
 
 <br>
 
@@ -36,11 +36,11 @@ As **Readiness probe** são executadas no container durante todo o seu ciclo de 
 
 <br>
 
-Uma **Startup probe** verifica se o aplicativo em um container foi iniciado. Isso pode ser usado para adotar *liveness probe* em containers de inicialização lenta, evitando que sejam mortos pelo kubelet antes de estarem em funcionamento.
+A **startup probe** verifica se o aplicativo em um container foi iniciado. Isso pode ser usado para adotar *liveness probe* em containers de inicialização lenta, evitando que sejam encerrados pelo *kubelet* antes de estarem em funcionamento.
 
-Se tal investigação estiver configurada, ela desabilitará as *liveness probe* e *readiness probe* até que seja bem-sucedida.
+Se a **startup probe** estiver configurada, ela desabilitará as *liveness probe* e *readiness probe* até que seja bem-sucedida.
 
-Esse tipo de teste é executado apenas na inicialização, diferentemente das *liveness probe* e *readiness probe*, que são executados periodicamente.
+A **startup probe** é executado apenas na inicialização, diferentemente das *liveness probe* e *readiness probe*, que são executados periodicamente.
 
 <br>
 
