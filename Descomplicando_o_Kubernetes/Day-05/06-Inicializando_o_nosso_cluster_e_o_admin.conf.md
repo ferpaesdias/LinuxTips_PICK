@@ -60,6 +60,82 @@ Por padrão, o `kubectl` procura um arquivo chamado config no diretório `$HOME/
 
 <br>
 
+## Seções de um arquivo kubeconfig
+
+<br>
+
+### Clusters
+
+**Clusters** é um mapa de nomes referenciáveis ​​para configurações de cluster.
+
+Cada cluster contém informações sobre como se comunicar com um cluster Kubernetes. Contém o endereço do API server e o certificado de autoridade (`certificate-authority-data`).
+
+- `certificate-authority-data`: O **CertificateAuthorityData** (CA) contém certificados de autoridade de certificação codificados em PEM. O CA é responsável por assinar e emitir certificados para o cluster. O certificado CA é usado para verificar a autenticidade dos certificados apresentados pelo servidor de API e pelos clientes, garantindo que a comunicação entre eles seja segura e confiável.
+
+<br>
+
+Exemplo:
+
+```yaml
+clusters:
+- cluster:
+    certificate-authority-data: <CERTIFICADO>
+    server: https://192.168.3.183:6443
+  name: kubernetes
+```
+
+<br>
+
+### Contexts
+
+**Contexts** é um mapa de nomes referenciáveis ​​para configurações de contexto.
+
+Contexto é uma tupla de referências a um cluster (como me comunico com um cluster kubernetes), um usuário (como me identifico) e um namespace (com qual subconjunto de recursos desejo trabalhar).
+
+Exemplo:
+
+```yaml
+contexts:
+- context:
+    cluster: kubernetes
+    user: kubernetes-admin
+  name: kubernetes-admin@kubernetes
+```
+
+<br>
+
+### Preferences
+
+A seção **preferences** contém configurações globais que afetam o comportamento do *kubectl*. Aqui podemos definir o editor de texto padrão, por exemplo.
+
+<br>
+
+### Users
+
+**Users** contém informações que descrevem informações de identidade. Isso é usado para informar ao cluster Kubernetes quem você é.
+
+Está secão contém as credenciais de acesso dos usuários, como:
+
+- `client-certificate-data`: O **ClientCertificateData** contém dados codificados em PEM de um arquivo de certificado de cliente para TLS. O **ClientCertificateData** é usado para autenticar o usuário ao se comunicar com o API server do Kubernetes. O certificado é assinado pela autoridade de certificação (CA) do cluster e inclui informações sobre o usuário e sua chave pública.
+
+- `client-key-data`: O **ClientKeyData** contém dados codificados em PEM de um arquivo de chave de cliente para TLS. Substitui *ClientKey*. O **ClientKeyData** é usado para assinar as solicitações enviadas ao API server do Kubernetes, permitindo que o servidor verifique a autenticidade da solicitação. A chave privada deve ser mantida em sigilo e não compartilhada com outras pessoas ou sistemas.
+
+- `token`: É um token de acesso que é usado para autenticar o usuário que está executando o comando *kubectl*. Esse token é gerado automaticamente quando o cluster é inicializado.
+
+<br>
+
+Exemplo:
+
+```yaml
+contexts:
+- context:
+    cluster: kubernetes
+    user: kubernetes-admin
+  name: kubernetes-admin@kubernetes
+```
+
+<br>
+
 ## Arquivo kubeconfig admin.conf
 
 - É um arquivo de configuração do *kubectl*, que é o cliente de linha de comando do Kubernetes. Ele é usado para se comunicar com o cluster Kubernetes.
@@ -78,3 +154,4 @@ Por padrão, o `kubectl` procura um arquivo chamado config no diretório `$HOME/
 [Kubernetes: Creating a cluster with kubeadm](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/)    
 [Kubernetes: Organizing Cluster Access Using kubeconfig Files](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/)    
 [Kubernetes: Configure Access to Multiple Clusters](https://kubernetes.io/docs/tasks/access-application-cluster/configure-access-multiple-clusters/)    
+[Kubernetes: Reference - kubeconfig (v1)](https://kubernetes.io/docs/reference/config-api/kubeconfig.v1/)    
