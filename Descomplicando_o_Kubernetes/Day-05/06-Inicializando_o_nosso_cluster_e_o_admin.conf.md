@@ -22,7 +22,7 @@ export KUBECONFIG=/etc/kubernetes/admin.conf
 
 ### Inicializando o Node Control Plane
 
-Para configurar o endereço de anúncio do API Server para Nodes Control Plane criados com `init` e `join`, a flag `--apiserver-advertise-address` pode ser usada.
+Para configurar o endereço IP que o API Server anunciára para Nodes Control Plane criados com `init` e `join`, a flag `--apiserver-advertise-address` pode ser usada.
 
 <br>
 
@@ -62,7 +62,6 @@ Por padrão, o `kubectl` procura um arquivo chamado config no diretório `$HOME/
 
 ## Seções de um arquivo kubeconfig
 
-<br>
 
 ### Clusters
 
@@ -79,7 +78,7 @@ Exemplo:
 ```yaml
 clusters:
 - cluster:
-    certificate-authority-data: <CERTIFICADO>
+    certificate-authority-data: <CertificateAuthorityData>
     server: https://192.168.3.183:6443
   name: kubernetes
 ```
@@ -127,12 +126,24 @@ Está secão contém as credenciais de acesso dos usuários, como:
 Exemplo:
 
 ```yaml
-contexts:
-- context:
-    cluster: kubernetes
-    user: kubernetes-admin
-  name: kubernetes-admin@kubernetes
+users:
+- name: kubernetes-admin
+  user:
+    client-certificate-data: <ClientCertificateData>
+    client-key-data: <ClientKeyData>
 ```
+
+<br>
+
+### Diretório dos certificados
+
+Os certificados podem ser encontrados no diretório `/etc/kubernetes/pki`:
+
+- **client-certificate-data**: O arquivo de certificado do cliente geralmente é encontrado em `/etc/kubernetes/pki/apiserver-kubelet-client.crt`.
+
+- **client-key-data**: O arquivo da chave privada do cliente geralmente é encontrado em `/etc/kubernetes/pki/apiserver-kubelet-client.key`.
+
+- **certificate-authority-data**: O arquivo do certificado da autoridade de certificação (CA) geralmente é encontrado em `/etc/kubernetes/pki/ca.crt`.
 
 <br>
 
