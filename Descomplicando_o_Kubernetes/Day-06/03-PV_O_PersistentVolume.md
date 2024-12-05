@@ -110,7 +110,7 @@ A política de recuperação (Reclaim Policy) `Recycle` está obsoleta. Em vez d
 
 <br>
 
-### Criar um PV a partir de um manifesto
+Criar um PV a partir de um manifesto
 
 ```shell
 kubectl apply -f meu-pv.yaml
@@ -118,7 +118,7 @@ kubectl apply -f meu-pv.yaml
 
 <br>
 
-### Listar PVs
+Listar PVs
 
 ```shell
 kubectl get pv
@@ -126,7 +126,7 @@ kubectl get pv
 
 <br>
 
-### Listar um PVs específico
+Listar um PVs específico
 
 ```shell
 kubectl get pv meu-pv
@@ -134,7 +134,7 @@ kubectl get pv meu-pv
 
 <br>
 
-### Obter informações detalhadas de um PV
+Obter informações detalhadas de um PV
 
 ```shell
 kubectl describe pv meu-pv
