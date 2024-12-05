@@ -53,5 +53,5 @@ spec:
   nfs:
     server: 192.168.3.24
     path: "/mnt/nfs"
-  storageClassName: meu-pv-nfs
+  storageClassName: sc-exemplo
 ```
