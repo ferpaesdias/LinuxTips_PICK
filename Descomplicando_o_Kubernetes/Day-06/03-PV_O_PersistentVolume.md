@@ -13,7 +13,7 @@ PVs são plug-ins de volume como Volumes, mas têm um ciclo de vida independente
 
 ## Tipos de PersistentVolume
 
-- `csi`: vContainer Storage Interface (CSI) define uma interface padrão para sistemas de orquestração de contêineres (como Kubernetes) para expor sistemas de armazenamento arbitrários às suas cargas de trabalho de contêiner.
+- `csi`: Container Storage Interface (CSI) define uma interface padrão para sistemas de orquestração de contêineres (como Kubernetes) para expor sistemas de armazenamento arbitrários às suas cargas de trabalho de contêiner.
 
 - `fc`: Um tipo de volume `fc` permite que um volume de armazenamento em bloco *Fibre Channel* existente seja montado em um Pod. É possível especificar nomes mundiais (WWNs) de destino únicos ou múltiplos usando o parâmetro `targetWWNs` na configuração do volume. Se vários WWNs forem especificados, os `targetWWNs` esperam que esses WWNs sejam de conexões de vários caminhos.
 
@@ -30,7 +30,7 @@ Contudo, os volumes locais estão sujeitos à disponibilidade do Node subjacente
 <br>
 
 >[!Note]
-O `hostPath` só deve ser apenas para testes de Node único; NÃO FUNCIONARÁ em um cluster de vários Nodes; considere usar o volume `local`.
+O `hostPath` só deve ser apenas para testes de Node único, NÃO FUNCIONARÁ em um cluster de vários Nodes, considere usar o volume `local`.
 
 <br>
 
@@ -81,6 +81,64 @@ spec:
     path: /mnt/data
   storageClassName: meupv
   ```
+
+<br>
+
+Descrição dos campos
+
+- `spec.capacity.storage`: Define que o PV terá uma capacidade de armazenamento específica. Exemplo: `1Gi`.
+
+- `spec.accessModes`: Define os modos de acesso que cada PV terá:
+    - `ReadWriteOnce`: O volume pode ser montado como leitura e gravação por um único Node. O modo de acesso `ReadWriteOnce` ainda pode permitir que vários Pods acessem o volume quando os Pods estão em execução no mesmo Node. 
+    - `ReadWriteOncePod`: O volume pode ser montado como leitura e gravação por um único Pod. Use o modo de acesso `ReadWriteOncePod` se quiser garantir que apenas um Pod em todo o cluster possa ler esse PVC ou gravar nele.
+    - `ReadOnlyMany`: O volume pode ser montado como somente leitura por muitos Nodes.
+    - `ReadWriteMany`: o volume pode ser montado como leitura e gravação por vários Nodes.
+
+- `spec.persistentVolumeReclaimPolicy`: Quando um usuário termina seu volume, ele pode excluir os objetos PVC da API que permite a recuperação do recurso. A política de recuperação (Reclaim Policy) de um PersistentVolume informa ao cluster o que fazer com o volume depois que sua reivindicação for liberada:
+    - `Retain`: Significa que o PV não será excluído quando o PVC for excluído.
+    - `Delete`: O PV será excluído quando o PVC for excluído.
+    - `Recycle`: O PV será excluído quando o PVC for excluído, mas antes disso ele será limpo, ou seja, todos os dados serão apagados.
+
+<br>
+
+>[!Warning]
+A política de recuperação (Reclaim Policy) `Recycle` está obsoleta. Em vez disso, a abordagem recomendada é utilizar o provisionamento dinâmico.
+
+<br>
+
+## Comandos básicos
+
+<br>
+
+### Criar um PV a partir de um manifesto
+
+```shell
+kubectl apply -f meu-pv.yaml
+```
+
+<br>
+
+### Listar PVs
+
+```shell
+kubectl get pv
+```
+
+<br>
+
+### Listar um PVs específico
+
+```shell
+kubectl get pv meu-pv
+```
+
+<br>
+
+### Obter informações detalhadas de um PV
+
+```shell
+kubectl describe pv meu-pv
+```
 
 <br>
 
