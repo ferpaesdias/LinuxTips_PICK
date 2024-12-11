@@ -63,6 +63,8 @@ apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
   name: sc-exemplo
+  labels:
+    storage: nfs
 provisioner: kubernetes.io/no-provisioner
 reclaimPolicy: Retain
 volumeBindingMode: WaitForFirstConsumer
