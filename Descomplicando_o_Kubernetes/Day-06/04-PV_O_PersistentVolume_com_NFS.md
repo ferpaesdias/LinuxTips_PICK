@@ -92,50 +92,6 @@ spec:
 
 <br>
 
-
-## Exemplo de manifesto de um objeto Deployment com um volume NFS
-
-<br>
-
-```yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  labels:
-    app: nginx-deployment
-  name: nginx-deployment
-spec:
-  replicas: 3
-  selector:
-    matchLabels:
-      app: nginx-deployment
-  strategy: {}
-  template:
-    metadata:
-      labels:
-        app: nginx-deployment
-    spec:
-      containers:
-      - image: nginx
-        name: nginx
-        resources:
-          limits:
-            cpu: 0.5
-            memory: 256Mi
-          requests:
-            cpu: 0.3
-            memory: 64Mi
-        volumeMounts:
-          - name: meu-pvc
-            mountPath: /usr/share/nginx/html
-      volumes:
-        - name: meu-pvc
-          persistentVolumeClaim:
-            claimName: pvc-nfs
-```
-
-<br>
-
 ## Saiba mais
 [Kubernetes: Storage Classes](https://kubernetes.io/docs/concepts/storage/storage-classes/)   
 [Kubernetes: Volumes](https://kubernetes.io/docs/concepts/storage/volumes/)   
