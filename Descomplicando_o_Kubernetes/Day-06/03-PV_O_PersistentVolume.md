@@ -89,10 +89,10 @@ Descrição dos campos
 - `spec.capacity.storage`: Define que o PV terá uma capacidade de armazenamento específica. Exemplo: `1Gi`.
 
 - `spec.accessModes`: Define os modos de acesso que cada PV terá:
-    - `ReadWriteOnce`: O volume pode ser montado como leitura e gravação por um único Node. O modo de acesso `ReadWriteOnce` ainda pode permitir que vários Pods acessem o volume quando os Pods estão em execução no mesmo Node. 
-    - `ReadWriteOncePod`: O volume pode ser montado como leitura e gravação por um único Pod. Use o modo de acesso `ReadWriteOncePod` se quiser garantir que apenas um Pod em todo o cluster possa ler esse PVC ou gravar nele.
-    - `ReadOnlyMany`: O volume pode ser montado como somente leitura por muitos Nodes.
-    - `ReadWriteMany`: o volume pode ser montado como leitura e gravação por vários Nodes.
+    - `ReadWriteOnce` (RWO): O volume pode ser montado como leitura e gravação por um único Node. O modo de acesso `ReadWriteOnce` ainda pode permitir que vários Pods acessem o volume quando os Pods estão em execução no mesmo Node. 
+    - `ReadWriteOncePod` (RWOP): O volume pode ser montado como leitura e gravação por um único Pod. Use o modo de acesso `ReadWriteOncePod` se quiser garantir que apenas um Pod em todo o cluster possa ler esse PVC ou gravar nele.
+    - `ReadOnlyMany` (ROX): O volume pode ser montado como somente leitura por muitos Nodes.
+    - `ReadWriteMany` (RWX): o volume pode ser montado como leitura e gravação por vários Nodes.
 
 - `spec.persistentVolumeReclaimPolicy`: Quando um usuário termina seu volume, ele pode excluir os objetos PVC da API que permite a recuperação do recurso. A política de recuperação (Reclaim Policy) de um PersistentVolume informa ao cluster o que fazer com o volume depois que sua reivindicação for liberada:
     - `Retain`: Significa que o PV não será excluído quando o PVC for excluído.
