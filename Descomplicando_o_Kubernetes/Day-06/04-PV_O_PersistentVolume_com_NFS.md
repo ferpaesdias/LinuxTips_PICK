@@ -33,6 +33,35 @@ showmount -e
 
 <br>
 
+## Instalando o NFS CSI driver for Kubernetes
+
+No Node Control Plane execute os comandos abaixo para instalar o **NFS CSI driver for Kubernetes**:
+
+```shell
+curl -skSL https://raw.githubusercontent.com/kubernetes-csi/csi-driver-nfs/v4.9.0/deploy/install-driver.sh | bash -s v4.9.0 --
+```
+
+<br>
+
+Verifique se os Pods com o prefixo `csi-nfs` foram criados:
+```shell
+kubectl -n kube-system get pod -o wide -l app=csi-nfs-controller
+kubectl -n kube-system get pod -o wide -l app=csi-nfs-node
+```
+
+<br>
+
+Exemplo da saída do comando:
+```shell
+NAME                                 READY   STATUS    RESTARTS   AGE     IP              NODE                  NOMINATED NODE   READINESS GATES
+csi-nfs-controller-75b74fd4f-zc7h9   4/4     Running   0          2m41s   192.168.3.203   kubernetes03-node02   <none>           <none>
+csi-nfs-node-6zk6k   3/3     Running   0          2m41s   192.168.3.202   kubernetes02-node01   <none>           <none>
+csi-nfs-node-rvn94   3/3     Running   0          2m41s   192.168.3.203   kubernetes03-node02   <none>           <none>
+csi-nfs-node-wz9hz   3/3     Running   0          2m41s   192.168.3.201   kubernetes01-server   <none>           <none>
+```
+
+<br>
+
 ## Exemplo de manifesto de um PersistentVolume com NFS
 
 <br>
@@ -43,15 +72,72 @@ kind: PersistentVolume
 metadata:
   labels:
     storage: nfs
-  name: meu-pv-nfs
+  name: pv-nfs
 spec:
   capacity:
     storage: 1Gi
   accessModes:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
-  nfs:
-    server: 192.168.3.24
-    path: "/mnt/nfs"
-  storageClassName: sc-exemplo
+  storageClassName: nfs
+  mountOptions:
+    - nfsvers=4.1
+  csi:
+    driver: nfs.csi.k8s.io
+    volumeHandle: Kubernetes04-NFS.kubernetes.local/mnt/nfs
+    volumeAttributes:
+      server: Kubernetes04-NFS.kubernetes.local
+      share: /mnt/nfs
 ```
+
+<br>
+
+
+## Exemplo de manifesto de um objeto Deployment com um volume NFS
+
+<br>
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx-deployment
+  name: nginx-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx-deployment
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: nginx-deployment
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        resources:
+          limits:
+            cpu: 0.5
+            memory: 256Mi
+          requests:
+            cpu: 0.3
+            memory: 64Mi
+        volumeMounts:
+          - name: meu-pvc
+            mountPath: /usr/share/nginx/html
+      volumes:
+        - name: meu-pvc
+          persistentVolumeClaim:
+            claimName: pvc-nfs
+```
+
+<br>
+
+## Saiba mais
+[Kubernetes: Storage Classes](https://kubernetes.io/docs/concepts/storage/storage-classes/)   
+[Kubernetes: Volumes](https://kubernetes.io/docs/concepts/storage/volumes/)   
+[Kubernetes: Persistent Volumes](https://kubernetes.io/docs/concepts/storage/persistent-volumes/)   
+[GitHub: NFS CSI driver for Kubernetes](https://github.com/kubernetes-csi/csi-driver-nfs)   
