@@ -62,10 +62,10 @@ Exemplo de manifesto de um StorageClass
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
-  name: sc-exemplo
+  name: nfs
   labels:
     storage: nfs
-provisioner: kubernetes.io/no-provisioner
+provisioner: nfs.csi.k8s.io
 reclaimPolicy: Retain
 volumeBindingMode: WaitForFirstConsumer
 ```
